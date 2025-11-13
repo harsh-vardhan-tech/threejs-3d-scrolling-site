@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Scrolling Experience | Three.js</title>
+    <title>Epic 3D Scrolling | Advanced Three.js</title>
     <style>
         * {
             margin: 0;
@@ -14,7 +14,7 @@
         body {
             font-family: 'Arial', sans-serif;
             overflow-x: hidden;
-            background: #000;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
             color: #fff;
         }
 
@@ -39,18 +39,19 @@
         .content {
             max-width: 800px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(15px);
+            background: rgba(0, 0, 0, 0.6);
             padding: 3rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            animation: fadeIn 1s ease-in-out;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            animation: slideUp 1s ease-out;
         }
 
-        @keyframes fadeIn {
+        @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(50px);
             }
             to {
                 opacity: 1;
@@ -59,41 +60,66 @@
         }
 
         h1 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #00f5ff, #ff00ea);
+            background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+            text-shadow: 0 0 30px rgba(255, 0, 110, 0.5);
+        }
+
+        @keyframes glow {
+            from {
+                filter: brightness(1);
+                text-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
+            }
+            to {
+                filter: brightness(1.3);
+                text-shadow: 0 0 40px rgba(131, 56, 236, 0.8);
+            }
         }
 
         h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #00f5ff;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #3a86ff;
+            animation: wave 3s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
         p {
             font-size: 1.3rem;
             line-height: 1.8;
-            color: #ccc;
+            color: #ddd;
             margin-bottom: 2rem;
+            animation: fadeIn 1.5s ease-in;
         }
 
-        .scroll-indicator {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-            font-size: 2rem;
-            opacity: 0.7;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-20px); }
+        .glitch {
+            animation: glitch 1s linear infinite;
+        }
+
+        @keyframes glitch {
+            2%, 64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+            4%, 60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
         }
 
         @media (max-width: 768px) {
@@ -109,33 +135,45 @@
 
     <div class="section">
         <div class="content">
-            <h1>3D Scrolling Experience</h1>
-            <p>Immerse yourself in an interactive 3D world powered by Three.js and WebGL. Scroll down to explore stunning animations and parallax effects.</p>
+            <h1 class="glitch">EPIC 3D EXPERIENCE</h1>
+            <p>Scroll down to witness mind-blowing 3D transformations. Each section brings a unique 3D object with stunning animations!</p>
         </div>
     </div>
 
     <div class="section">
         <div class="content">
-            <h2>Floating Particles</h2>
-            <p>Watch as thousands of particles dance around you, responding to your scroll position. Each particle creates a mesmerizing visual symphony in 3D space.</p>
+            <h2>Crystal Diamond</h2>
+            <p>A shimmering crystal that reflects rainbow colors, rotating majestically in 3D space with particle effects.</p>
         </div>
     </div>
 
     <div class="section">
         <div class="content">
-            <h2>Dynamic Geometry</h2>
-            <p>The 3D shapes morph and transform as you navigate through the page, creating a unique experience with every scroll.</p>
+            <h2>DNA Helix</h2>
+            <p>Watch the double helix structure of life spiral through space with glowing strands and energy pulses.</p>
         </div>
     </div>
 
     <div class="section">
         <div class="content">
-            <h2>WebGL Power</h2>
-            <p>Experience the full potential of modern web graphics with hardware-accelerated rendering and smooth 60 FPS animations.</p>
+            <h2>Cosmic Sphere</h2>
+            <p>An energy sphere pulsating with cosmic power, surrounded by orbiting rings and particle trails.</p>
         </div>
     </div>
 
-    <div class="scroll-indicator">↓</div>
+    <div class="section">
+        <div class="content">
+            <h2>Cube Matrix</h2>
+            <p>A morphing cube covered in digital matrix patterns, shifting through dimensions with neon edges.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="content">
+            <h2>Infinity Loop</h2>
+            <p>Experience the infinite loop of creation with endless ribbons flowing through space and time.</p>
+        </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
@@ -153,7 +191,7 @@
 
         // Particle system
         const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 5000;
+        const particlesCount = 3000;
         const posArray = new Float32Array(particlesCount * 3);
 
         for(let i = 0; i < particlesCount * 3; i++) {
@@ -162,34 +200,109 @@
 
         particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
         const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.02,
-            color: 0x00f5ff,
+            size: 0.025,
+            color: 0x00d9ff,
             transparent: true,
             opacity: 0.8
         });
         const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
         scene.add(particlesMesh);
 
-        // Rotating torus
-        const torusGeometry = new THREE.TorusGeometry(1, 0.4, 16, 100);
-        const torusMaterial = new THREE.MeshStandardMaterial({
-            color: 0xff00ea,
-            wireframe: true
-        });
-        const torus = new THREE.Mesh(torusGeometry, torusMaterial);
+        // Create multiple 3D objects for different sections
+        const objects = [];
+
+        // 1. Torus (Donut)
+        const torus = new THREE.Mesh(
+            new THREE.TorusGeometry(1, 0.4, 16, 100),
+            new THREE.MeshStandardMaterial({
+                color: 0xff006e,
+                wireframe: true
+            })
+        );
+        objects.push(torus);
         scene.add(torus);
+
+        // 2. Octahedron (Crystal)
+        const crystal = new THREE.Mesh(
+            new THREE.OctahedronGeometry(1.5),
+            new THREE.MeshStandardMaterial({
+                color: 0x8338ec,
+                wireframe: false,
+                emissive: 0x8338ec,
+                emissiveIntensity: 0.5
+            })
+        );
+        objects.push(crystal);
+        scene.add(crystal);
+
+        // 3. Torus Knot (DNA Helix)
+        const helix = new THREE.Mesh(
+            new THREE.TorusKnotGeometry(1, 0.3, 100, 16),
+            new THREE.MeshStandardMaterial({
+                color: 0x3a86ff,
+                wireframe: true
+            })
+        );
+        objects.push(helix);
+        scene.add(helix);
+
+        // 4. Sphere (Cosmic)
+        const sphere = new THREE.Mesh(
+            new THREE.SphereGeometry(1.2, 32, 32),
+            new THREE.MeshStandardMaterial({
+                color: 0x00f5ff,
+                wireframe: false,
+                emissive: 0x00f5ff,
+                emissiveIntensity: 0.3
+            })
+        );
+        objects.push(sphere);
+        scene.add(sphere);
+
+        // 5. Box (Matrix Cube)
+        const cube = new THREE.Mesh(
+            new THREE.BoxGeometry(1.5, 1.5, 1.5),
+            new THREE.MeshStandardMaterial({
+                color: 0x06ffa5,
+                wireframe: true
+            })
+        );
+        objects.push(cube);
+        scene.add(cube);
+
+        // 6. Icosahedron (Final)
+        const icosa = new THREE.Mesh(
+            new THREE.IcosahedronGeometry(1.3),
+            new THREE.MeshStandardMaterial({
+                color: 0xffbe0b,
+                wireframe: false,
+                emissive: 0xffbe0b,
+                emissiveIntensity: 0.4
+            })
+        );
+        objects.push(icosa);
+        scene.add(icosa);
 
         // Lights
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
         scene.add(ambientLight);
-        const pointLight = new THREE.PointLight(0x00f5ff, 1);
-        pointLight.position.set(5, 5, 5);
-        scene.add(pointLight);
+        
+        const pointLight1 = new THREE.PointLight(0xff006e, 2);
+        pointLight1.position.set(5, 5, 5);
+        scene.add(pointLight1);
+
+        const pointLight2 = new THREE.PointLight(0x3a86ff, 2);
+        pointLight2.position.set(-5, -5, 5);
+        scene.add(pointLight2);
 
         // Scroll animation
         let scrollY = window.scrollY;
+        let currentSection = 0;
+        const sectionHeight = window.innerHeight;
+
         window.addEventListener('scroll', () => {
             scrollY = window.scrollY;
+            currentSection = Math.round(scrollY / sectionHeight);
         });
 
         // Mouse movement
@@ -208,16 +321,41 @@
 
             // Animate particles
             particlesMesh.rotation.y = elapsedTime * 0.05;
-            particlesMesh.rotation.x = scrollY * 0.0005;
+            particlesMesh.rotation.x = scrollY * 0.0003;
 
-            // Animate torus
-            torus.rotation.x = elapsedTime * 0.5;
-            torus.rotation.y = elapsedTime * 0.3;
-            torus.position.y = -scrollY * 0.002;
+            // Hide all objects first
+            objects.forEach((obj, index) => {
+                obj.visible = false;
+            });
+
+            // Show only current section's object
+            if (currentSection < objects.length) {
+                const currentObject = objects[currentSection];
+                currentObject.visible = true;
+                
+                // Animate current object
+                currentObject.rotation.x = elapsedTime * 0.5;
+                currentObject.rotation.y = elapsedTime * 0.3;
+                
+                // Add special animations for specific objects
+                if (currentSection === 1) {
+                    currentObject.rotation.z = elapsedTime * 0.2;
+                    currentObject.scale.set(
+                        1 + Math.sin(elapsedTime) * 0.1,
+                        1 + Math.sin(elapsedTime) * 0.1,
+                        1 + Math.sin(elapsedTime) * 0.1
+                    );
+                } else if (currentSection === 3) {
+                    currentObject.position.y = Math.sin(elapsedTime) * 0.3;
+                }
+            }
 
             // Camera parallax
-            camera.position.x = mouseX * 0.5;
-            camera.position.y = -mouseY * 0.5;
+            camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY * 0.5 - camera.position.y) * 0.05;
+
+            // Smooth camera zoom based on scroll
+            camera.position.z = 5 - (scrollY * 0.0005);
 
             renderer.render(scene, camera);
         }
@@ -229,15 +367,6 @@
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        });
-
-        // Hide scroll indicator after scrolling
-        window.addEventListener('scroll', () => {
-            if (scrollY > 100) {
-                document.querySelector('.scroll-indicator').style.opacity = '0';
-            } else {
-                document.querySelector('.scroll-indicator').style.opacity = '0.7';
-            }
         });
     </script>
 </body>
